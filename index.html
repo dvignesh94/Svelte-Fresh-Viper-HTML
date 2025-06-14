@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Svelte Fresh Viper</title>
+    <meta property="og:title" content="Svelte Fresh Viper" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Noto Sans;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div class="home-navbar1">
+          <navbar4-wrapper class="navbar4-wrapper">
+            <!--Navbar4 component-->
+            <div class="navbar4-container">
+              <header data-thq="thq-navbar" class="navbar4-navbar-interactive">
+                <img
+                  alt="image"
+                  src="public/logo_final%20(1)-200w.png"
+                  class="navbar4-image"
+                />
+                <div
+                  data-thq="thq-navbar-nav"
+                  class="navbar4-desktop-menu"
+                ></div>
+                <div data-thq="thq-burger-menu" class="navbar4-burger-menu">
+                  <svg viewBox="0 0 1024 1024" class="navbar4-icon1">
+                    <path
+                      d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+                <div data-thq="thq-mobile-menu" class="navbar4-mobile-menu">
+                  <div class="navbar4-nav">
+                    <div class="navbar4-top">
+                      <img
+                        alt="Company Logo"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
+                        class="navbar4-logo"
+                      />
+                      <div data-thq="thq-close-menu" class="navbar4-close-menu">
+                        <svg viewBox="0 0 1024 1024" class="navbar4-icon3">
+                          <path
+                            d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <nav class="navbar4-links">
+                      <span class="thq-link thq-body-small">
+                        <span>Home</span>
+                      </span>
+                      <span class="thq-link thq-body-small">
+                        <span>Products</span>
+                      </span>
+                      <span class="thq-link thq-body-small">
+                        <span>About Us</span>
+                      </span>
+                      <span class="thq-link thq-body-small">
+                        <span>Contact</span>
+                      </span>
+                      <span class="thq-link thq-body-small">
+                        <span>Link5</span>
+                      </span>
+                    </nav>
+                  </div>
+                  <div class="navbar4-buttons">
+                    <button class="thq-button-filled">Login</button>
+                    <button class="thq-button-outline">Register</button>
+                  </div>
+                </div>
+              </header>
+            </div>
+          </navbar4-wrapper>
+        </div>
+        <div class="home-hero2">
+          <hero3-wrapper class="hero3-wrapper">
+            <!--Hero3 component-->
+            <div class="hero3-header9">
+              <img
+                alt="Children using robotic kits"
+                src="public/img_20190401_124040_84fee1e2-1500w.jpg"
+                class="thq-img-ratio-16-9"
+              />
+              <div class="hero3-content thq-section-padding">
+                <div class="hero3-max-width thq-flex-row thq-section-max-width">
+                  <div class="hero3-column1">
+                    <h1 class="thq-heading-1 hero3-text1">
+                      <span>
+                        Unlock Your Child's Potential with Robotics Education
+                      </span>
+                    </h1>
+                  </div>
+                  <div class="hero3-column2">
+                    <p class="thq-body-large hero3-text2">
+                      <span>
+                        Inspire your child's creativity and problem-solving
+                        skills with our STEAM-based robotic kits.
+                      </span>
+                    </p>
+                    <div class="hero3-actions">
+                      <button class="thq-button-filled hero3-button1">
+                        <span class="thq-body-small">
+                          <span>Learn More</span>
+                        </span>
+                      </button>
+                      <button class="thq-button-outline hero3-button2">
+                        <span class="thq-body-small">
+                          <span>Shop Now</span>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </hero3-wrapper>
+        </div>
+        <div class="home-logos3">
+          <logos1-wrapper class="logos1-wrapper">
+            <!--Logos1 component-->
+            <div class="logos1-container1 thq-section-padding">
+              <div class="logos1-max-width thq-section-max-width">
+                <h2 class="logos1-text thq-heading-2">
+                  <span>
+                    Trusted by the world's best Companies and schools social
+                    proof to build credibility
+                  </span>
+                </h2>
+                <div class="thq-grid-6">
+                  <img
+                    alt="pastedImage"
+                    src="public/external/pastedimage-intk-200h.png"
+                    class="logos1-pasted-image1"
+                  />
+                  <img
+                    alt="pastedImage"
+                    src="public/external/pastedimage-07x5-200h.png"
+                    class="logos1-pasted-image2"
+                  />
+                  <img
+                    alt="pastedImage"
+                    src="public/external/pastedimage-9o8r-200h.png"
+                    class="logos1-pasted-image3"
+                  />
+                  <img
+                    alt="pastedImage"
+                    src="public/external/pastedimage-ho3-200h.png"
+                    class="logos1-pasted-image4"
+                  />
+                  <img
+                    alt="pastedImage"
+                    src="public/external/pastedimage-xc5uj-200h.png"
+                    class="logos1-pasted-image5"
+                  />
+                  <img
+                    alt="pastedImage"
+                    src="public/external/pastedimage-51aq-200h.png"
+                    class="logos1-pasted-image6"
+                  />
+                </div>
+              </div>
+            </div>
+          </logos1-wrapper>
+        </div>
+        <div class="home-gallery4">
+          <gallery1-wrapper class="gallery1-wrapper">
+            <!--Gallery1 component-->
+            <div class="gallery1-gallery3 thq-section-padding">
+              <div class="gallery1-max-width thq-section-max-width">
+                <div class="gallery1-section-title">
+                  <h2 class="gallery1-text1 thq-heading-2">
+                    <span>Kids enjoying our robotic kits</span>
+                  </h2>
+                  <span class="gallery1-text2 thq-body-large">
+                    <span>
+                      Explore our gallery to see kids having fun and learning
+                      with our STEAM-based robotic kits.
+                    </span>
+                  </span>
+                </div>
+                <div class="gallery1-content">
+                  <div class="gallery1-container1">
+                    <img
+                      alt="pastedImage"
+                      src="public/external/pastedimage-f9f8-1400w.png"
+                      class="gallery1-pasted-image"
+                    />
+                    <div class="gallery1-container2"></div>
+                  </div>
+                  <div class="gallery1-container3">
+                    <img
+                      alt="Group of children programming a robot"
+                      src="https://images.unsplash.com/photo-1508791480635-9674954d4aa1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNDk4MTc3M3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                      class="thq-img-ratio-4-3"
+                    />
+                  </div>
+                  <div class="gallery1-container4">
+                    <img
+                      alt="Kids showcasing their robotic creations"
+                      src="https://images.unsplash.com/photo-1518902900240-0952c22b4274?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNDk4MTc3Mnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                      class="thq-img-ratio-4-3"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </gallery1-wrapper>
+        </div>
+        <div class="home-features5">
+          <features17-wrapper class="features17-wrapper">
+            <!--Features17 component-->
+            <div class="features17-layout349 thq-section-padding">
+              <div class="features17-max-width thq-section-max-width">
+                <div class="features17-image-container">
+                  <img
+                    alt="image"
+                    src="public/whatsapp%20image%202025-06-14%20at%204.19.40%20am%20(1)-300h.jpeg"
+                    class="features17-image"
+                  />
+                </div>
+                <div class="features17-content1">
+                  <div class="features17-section-title">
+                    <span class="thq-body-small">
+                      <span>Hands-on experience for better understanding</span>
+                    </span>
+                    <div class="features17-content2">
+                      <h2 class="thq-heading-2">
+                        <span>Interactive Learning</span>
+                      </h2>
+                      <p class="thq-body-large">
+                        <span>
+                          Our robotic kits provide an interactive learning
+                          experience, allowing kids to build, program, and play
+                          with their own robots. This hands-on approach enhances
+                          their understanding of STEAM concepts.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </features17-wrapper>
+        </div>
+        <div class="home-features6">
+          <features18-wrapper class="features18-wrapper">
+            <!--Features18 component-->
+            <div class="features18-layout349 thq-section-padding">
+              <div class="features18-max-width thq-section-max-width">
+                <div class="features18-content1">
+                  <div class="features18-section-title">
+                    <span class="thq-body-small">
+                      <span>Hands-on Learning</span>
+                    </span>
+                    <div class="features18-content2">
+                      <h2 class="thq-heading-2">
+                        <span>Interactive Robotics Kits</span>
+                      </h2>
+                      <p class="thq-body-large">
+                        <span>
+                          Our robotics kits provide a hands-on learning
+                          experience for kids to build and program their own
+                          robots, fostering creativity and problem-solving
+                          skills.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="features18-image-container">
+                  <img
+                    alt="pastedImage"
+                    src="public/external/pastedimage-e1b-400h.png"
+                    class="features18-pasted-image"
+                  />
+                </div>
+              </div>
+            </div>
+          </features18-wrapper>
+        </div>
+        <div class="home-features7"></div>
+        <div class="home-cta8"></div>
+        <div class="home-faq9">
+          <faq1-wrapper class="faq1-wrapper" rootclassname="faq1undefined">
+            <!--FAQ1 component-->
+            <div class="faq1faq7 thq-section-padding faq1root-class-name">
+              <div class="faq1-max-width thq-section-max-width">
+                <div class="thq-flex-column">
+                  <h2 class="thq-heading-2"><span>FAQs</span></h2>
+                  <p class="faq1-text2 thq-body-large">
+                    <span>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Suspendisse varius enim in eros elementum tristique.
+                    </span>
+                  </p>
+                </div>
+                <div class="thq-flex-column faq1-list">
+                  <div class="faq1-list-item1">
+                    <p class="faq1-faq1-question thq-body-large">
+                      <span>
+                        What age group are the robotic kits designed for?
+                      </span>
+                    </p>
+                    <span class="thq-body-small">
+                      <span>
+                        Our robotic kits are designed for children aged 8 and
+                        above.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="faq1-list-item2">
+                    <p class="faq1-faq2-question thq-body-large">
+                      <span>
+                        Are the robotic kits safe for children to use?
+                      </span>
+                    </p>
+                    <span class="thq-body-small">
+                      <span>
+                        Yes, our robotic kits are designed with safety in mind
+                        and come with clear instructions for safe usage.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="faq1-list-item3">
+                    <p class="faq1-faq3-question thq-body-large">
+                      <span>
+                        Do I need any prior experience in robotics to use these
+                        kits?
+                      </span>
+                    </p>
+                    <span class="thq-body-small">
+                      <span>
+                        No prior experience is required. Our kits are designed
+                        to be beginner-friendly and come with step-by-step
+                        instructions.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="faq1-list-item4">
+                    <p class="faq1-faq4-question thq-body-large">
+                      <span>
+                        Can parents get involved in building the robots with
+                        their kids?
+                      </span>
+                    </p>
+                    <span class="thq-body-small">
+                      <span>
+                        Absolutely! We encourage parents to join in on the fun
+                        and learning experience of building robots with their
+                        children.
+                      </span>
+                    </span>
+                  </div>
+                  <div class="faq1-list-item5">
+                    <p class="faq1-faq5-question thq-body-large">
+                      <span>
+                        What educational benefits do these robotic kits offer?
+                      </span>
+                    </p>
+                    <span class="thq-body-small">
+                      <span>
+                        Our robotic kits promote STEAM education by teaching
+                        children about science, technology, engineering, arts,
+                        and mathematics in a hands-on and engaging way.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="thq-flex-column">
+                  <div class="faq1-content2">
+                    <h2 class="thq-heading-2">
+                      <span>Still have a question?</span>
+                    </h2>
+                    <p class="faq1-text4 thq-body-large">
+                      <span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </span>
+                    </p>
+                  </div>
+                  <div class="faq1-container">
+                    <button class="thq-button-outline faq1-button">
+                      <span class="thq-body-small"><span>Contact</span></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </faq1-wrapper>
+        </div>
+        <div class="home-contact10">
+          <contact4-wrapper class="contact4-wrapper">
+            <!--Contact4 component-->
+            <div class="contact4-contact20 thq-section-padding">
+              <div class="contact4-max-width thq-section-max-width">
+                <div class="contact4-section-title">
+                  <span class="thq-body-small">
+                    <span>
+                      For inquiries about our products or services, please
+                      contact us via email or phone.
+                    </span>
+                  </span>
+                  <div class="contact4-content1">
+                    <h2 class="thq-heading-2"><span>Contact Us</span></h2>
+                    <p class="contact4-text3 thq-body-large">
+                      <span>
+                        Have a question or need support? Feel free to reach out
+                        to us.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div class="contact4-row">
+                  <div class="contact4-content2">
+                    <svg viewBox="0 0 1024 1024" class="thq-icon-medium">
+                      <path
+                        d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"
+                      ></path>
+                    </svg>
+                    <div class="contact4-contact-info1">
+                      <div class="contact4-content3">
+                        <h3 class="contact4-text4 thq-heading-3">Email</h3>
+                        <p class="contact4-text5 thq-body-large">
+                          <span>
+                            Follow us on social media for the latest updates and
+                            promotions.
+                          </span>
+                        </p>
+                      </div>
+                      <span class="contact4-email thq-body-small">
+                        <span>kbotix.kbx@gmail.com</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="contact4-content4">
+                    <svg
+                      viewBox="0 0 1024 1024"
+                      class="contact4-icon3 thq-icon-medium"
+                    >
+                      <path
+                        d="M282 460q96 186 282 282l94-94q20-20 44-10 72 24 152 24 18 0 30 12t12 30v150q0 18-12 30t-30 12q-300 0-513-213t-213-513q0-18 12-30t30-12h150q18 0 30 12t12 30q0 80 24 152 8 26-10 44z"
+                      ></path>
+                    </svg>
+                    <div class="contact4-contact-info2">
+                      <div class="contact4-content5">
+                        <h3 class="contact4-text6 thq-heading-3">Phone</h3>
+                        <p class="contact4-text7 thq-body-large">
+                          <span>Connect with us on:</span>
+                        </p>
+                      </div>
+                      <span class="contact4-phone thq-body-small">
+                        <span>+91-7010932964</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="contact4-content6">
+                    <svg
+                      viewBox="0 0 1024 1024"
+                      class="contact4-icon5 thq-icon-medium"
+                    >
+                      <path
+                        d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"
+                      ></path>
+                    </svg>
+                    <div class="contact4-contact-info3">
+                      <div class="contact4-content7">
+                        <h3 class="contact4-text8 thq-heading-3">Office</h3>
+                      </div>
+                      <span class="contact4-address thq-body-small">
+                        <span>1/158, Nehru Street, Mudichur, Chennai</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </contact4-wrapper>
+        </div>
+        <div class="home-footer11">
+          <footer15-wrapper class="footer15-wrapper">
+            <!--Footer15 component-->
+            <div class="footer15-container1 thq-section-padding">
+              <div class="footer15-max-width thq-section-max-width">
+                <div class="footer15-content">
+                  <div class="footer15-actions">
+                    <div class="footer15-media">
+                      <div class="footer15-container2">
+                        <div class="footer15-social-links">
+                          <svg
+                            viewBox="0 0 877.7142857142857 1024"
+                            class="thq-icon-small"
+                          >
+                            <path
+                              d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z"
+                            ></path></svg
+                          ><svg
+                            viewBox="0 0 877.7142857142857 1024"
+                            class="thq-icon-small"
+                          >
+                            <path
+                              d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                            ></path></svg
+                          ><svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                            <path
+                              d="M406.286 644.571l276.571-142.857-276.571-144.571v287.429zM512 152c215.429 0 358.286 10.286 358.286 10.286 20 2.286 64 2.286 102.857 43.429 0 0 31.429 30.857 40.571 101.714 10.857 82.857 10.286 165.714 10.286 165.714v77.714s0.571 82.857-10.286 165.714c-9.143 70.286-40.571 101.714-40.571 101.714-38.857 40.571-82.857 40.571-102.857 42.857 0 0-142.857 10.857-358.286 10.857v0c-266.286-2.286-348-10.286-348-10.286-22.857-4-74.286-2.857-113.143-43.429 0 0-31.429-31.429-40.571-101.714-10.857-82.857-10.286-165.714-10.286-165.714v-77.714s-0.571-82.857 10.286-165.714c9.143-70.857 40.571-101.714 40.571-101.714 38.857-41.143 82.857-41.143 102.857-43.429 0 0 142.857-10.286 358.286-10.286v0z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer15-credits1">
+                  <div class="footer15-row">
+                    <div class="footer15-credits2">
+                      <span class="thq-body-small">
+                        <span>Privacy Policy</span>
+                      </span>
+                      <span class="thq-body-small">
+                        <span>Terms of Service</span>
+                      </span>
+                      <span class="thq-body-small"><span>Cookies</span></span>
+                    </div>
+                  </div>
+                  <span class="footer15-content3 thq-body-small">
+                    <span>© 2024 Kbotix PVT LTD</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </footer15-wrapper>
+        </div>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
